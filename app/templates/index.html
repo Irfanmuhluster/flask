@@ -1,0 +1,26 @@
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - Coba</title>
+        {% else %}
+        <title>Welcome to My blog!</title>
+        {% endif %}
+    </head>
+    <body>
+        <h1>Hello, {{ user }}!</h1>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul class=flashes>
+            {% for msg in messages %}
+              <li>{{ msg }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+        {% block body %}{% endblock %}
+        {% block content %}
+          <p>Login sukses - <a href="{{ url_for('logout')}}">logout</a></p>
+        {% endblock %}
+    </body>
+
+</html>
