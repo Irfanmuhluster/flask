@@ -19,8 +19,7 @@ tfmt = '%Y-%m-%dT%H:%M:%S.%fZ'
 
 @app.route('/')
 def welcome():
-    # jika session username terdaftar maka ke index.html
-    return "Ini halaman utama webserver"
+    return render_template('index.html')
 
 
 @app.route('/coba')
@@ -59,3 +58,8 @@ def coba2():
     # resp.headers
     # return jsonify(data3)
     return resp
+
+
+@app.route('/logout')
+def logout():
+    pass
